@@ -17,8 +17,8 @@ class ToDoBloc extends Bloc<ToDoEvents, ToDoState> {
 
   void _removeToDoEvents(RemoveToDoEvent event, Emitter<ToDoState> emit) {
     todoList.removeAt(event.index);
-    emit(state.copyWith(todosList: todoList));
-    // emit(state.copyWith(todosList: List.from(todoList)));
+    // emit(state.copyWith(todosList: todoList));
+    emit(state.copyWith(todosList: List.from(todoList)));
     debugPrint('length ------${state.todosList.length}');
     debugPrint('List ------${state.todosList}');
 
