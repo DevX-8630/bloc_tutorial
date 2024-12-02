@@ -1,7 +1,6 @@
-import 'package:bloc_tutorial_app/model/favourite_item_model.dart';
 import 'package:equatable/equatable.dart';
-
-enum ListStatus { loading, success, failure }
+import 'package:bloc_tutorial_app/utils/enums.dart';
+import 'package:bloc_tutorial_app/model/favourite_item_model.dart';
 
 class FavouriteItemStates extends Equatable {
   const FavouriteItemStates({

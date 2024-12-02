@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_tutorial_app/utils/enums.dart';
 import 'package:bloc_tutorial_app/model/favourite_item_model.dart';
 import 'package:bloc_tutorial_app/repository/favourite_repository.dart';
 import 'package:bloc_tutorial_app/bloc/favourite/favourite_app_events.dart';

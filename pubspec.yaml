@@ -15,6 +15,7 @@ dependencies:
   flutter_bloc:
   bloc:
   image_picker:
+  http:
 
   cupertino_icons: ^1.0.8
 
