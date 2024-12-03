@@ -1,9 +1,9 @@
-import 'package:bloc_tutorial_app/bloc/posts/post_states.dart';
-import 'package:bloc_tutorial_app/bloc/posts/posts_bloc.dart';
-import 'package:bloc_tutorial_app/bloc/posts/posts_events.dart';
-import 'package:bloc_tutorial_app/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_tutorial_app/utils/enums.dart';
+import 'package:bloc_tutorial_app/bloc/posts/posts_bloc.dart';
+import 'package:bloc_tutorial_app/bloc/posts/post_states.dart';
+import 'package:bloc_tutorial_app/bloc/posts/posts_events.dart';
 
 class PostsScreen extends StatefulWidget {
   const PostsScreen({super.key});

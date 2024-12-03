@@ -1,6 +1,6 @@
-import 'package:bloc_tutorial_app/model/posts_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_tutorial_app/utils/enums.dart';
+import 'package:bloc_tutorial_app/model/posts_model.dart';
 import 'package:bloc_tutorial_app/bloc/posts/post_states.dart';
 import 'package:bloc_tutorial_app/bloc/posts/posts_events.dart';
 import 'package:bloc_tutorial_app/repository/post_repository.dart';
