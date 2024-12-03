@@ -27,7 +27,10 @@ class PostBloc extends Bloc<PostsEvent, PostStates> {
     if (event.stSearch.isEmpty) {
       emit(state.copyWith(temPostList: [], searchMessage: ''));
     } else {
+      /// this is used when you we have to filter data with the value matching not exact
       temPostList = state.postList.where((element) => element.email.toString().toLowerCase().contains(event.stSearch.toLowerCase())).toList();
+
+      /// this is used when you we have to filter data with the value matching with exact
       // temPostList = state.postList.where((element) => element.email.toString() == event.stSearch.toString()).toList();
       if (temPostList.isEmpty) {
         emit(state.copyWith(temPostList: List.from(temPostList), searchMessage: 'No Data Found'));
