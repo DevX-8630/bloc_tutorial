@@ -9,6 +9,7 @@ part 'login_event.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(const LoginState()) {
+    //bug fixed
     /* on<LoginEvent>((event, emit) {
       on<EmailChanged>(_onEmailChanged);
       on<PasswordChanged>(_onPasswordChanged);
