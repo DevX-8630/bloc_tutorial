@@ -38,34 +38,56 @@ class _PostsScreenState extends State<PostsScreen> {
                 child: Text(state.message),
               );
             case PostStatus.success:
-              return ListView.separated(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemBuilder: (context, index) {
-                    final item = state.postList[index];
-                    return Card(
-                      child: ListTile(
-                        title: Text(
-                          item.email.toString(),
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        subtitle: Text(
-                          item.body.toString(),
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Search with Email',
+                        border: OutlineInputBorder(),
                       ),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(height: 10);
-                  },
-                  itemCount: state.postList.length);
+                      onChanged: (filterKey) {
+                        context.read<PostBloc>().add(SearchItem(stSearch: filterKey.toString()));
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    Expanded(
+                      child: state.searchMessage.isNotEmpty
+                          ? const Center(
+                              child: Text('No Data Found'),
+                            )
+                          : ListView.separated(
+                              itemBuilder: (context, index) {
+                                final item = state.temPostList.isEmpty ? state.postList[index] : state.temPostList[index];
+                                return Card(
+                                  child: ListTile(
+                                    title: Text(
+                                      item.email.toString(),
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    subtitle: Text(
+                                      item.body.toString(),
+                                      style: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ),
+                                );
+                              },
+                              separatorBuilder: (context, index) {
+                                return const SizedBox(height: 10);
+                              },
+                              itemCount: state.temPostList.isEmpty ? state.postList.length : state.temPostList.length),
+                    ),
+                  ],
+                ),
+              );
           }
         },
       ),
