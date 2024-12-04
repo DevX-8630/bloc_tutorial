@@ -1,4 +1,3 @@
-import 'package:bloc_tutorial_app/model/person_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/* class PersonModel {
+class PersonModel {
   String? name;
 
   PersonModel({
@@ -85,4 +84,4 @@ class _HomeScreenState extends State<HomeScreen> {
   String toString() {
     return 'PersonModel(name: $name)';
   }
-} */
+}
