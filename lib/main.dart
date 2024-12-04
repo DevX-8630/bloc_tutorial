@@ -1,9 +1,9 @@
-import 'package:bloc_tutorial_app/view/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_tutorial_app/bloc/todo/to_do_bloc.dart';
 import 'package:bloc_tutorial_app/bloc/posts/posts_bloc.dart';
 import 'package:bloc_tutorial_app/utils/image_picker_utils.dart';
+import 'package:bloc_tutorial_app/flutter_freezed/home_screen.dart';
 import 'package:bloc_tutorial_app/bloc/switch_example/switch_bloc.dart';
 import 'package:bloc_tutorial_app/repository/favourite_repository.dart';
 import 'package:bloc_tutorial_app/bloc/favourite/favourite_app_bloc.dart';
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 83, 68, 109)),
           useMaterial3: true,
         ),
-        home: const LoginScreen(),
+        home: const HomeScreen(),
       ),
     );
   }
